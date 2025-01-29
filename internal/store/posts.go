@@ -3,7 +3,7 @@ package store
 import (
 	"context"
 	"database/sql"
-	"github.com/hmprgm/swocial/models"
+	//"github.com/hmprgm/swocial/models"
 )
 
 type PostsStore struct {
