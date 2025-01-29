@@ -11,5 +11,5 @@ type PostsStore struct {
 }
 
 func (s *PostsStore) Create(ctx context.Context) error {
-
+	return nil
 }
