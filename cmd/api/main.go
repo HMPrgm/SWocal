@@ -2,7 +2,9 @@ package main
 
 import (
 	"log"
+
 	"github.com/hmprgm/swocial/internal/env"
+	"github.com/hmprgm/swocial/internal/store"
 	"github.com/joho/godotenv"
 )
 
@@ -18,11 +20,16 @@ func main() {
 	setupDotEnv()
 
 	cfg := config{
-		addr: env.GetString("ADDR",":8080"),
+		addr: env.GetString("ADDR", ":8080"),
 	}
+
+	store := store.NewPostgresStorage(nil)
+
 	app := &application{
 		config: cfg,
+		store: store,
 	}
+
 
 	mux := app.mount()
 
